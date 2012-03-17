@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Yunus Emre Şiirleri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../resources/thirdparty/tipsy/tipsy.css" rel="stylesheet"/>
+    <link href="../resources/style/style.css" rel="stylesheet"/>
+
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <!--<link rel="apple-touch-icon" href="images/apple-touch-icon.png">-->
+    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">-->
+    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">-->
+</head>
+
+<body>
+<div id="container" class="container">
+    <img src="../resources/img/topLeft.png" style="position:fixed; top:10px; left:10px;"/>
+    <img src="../resources/img/topRight.png" style="position:fixed; top:10px; right:10px;"/>
+
+    <div style="padding-left: 10em; padding-top: 3em; color: black">
+        <a href="index.html" class="transparent">
+            <img src="../resources/img/showAll.png"/>
+            <span>Listeye dön</span>
+        </a>
+    </div>
+
+    <div style="text-align:center; padding-left: 10em; padding-right:6em;">
+
+        <div style="display: inline-block; text-align: left;">
+            <p class="title">
+                180. Türlü türlü cefanın
+            </p>
+            <p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Türlü türlü <a href="#" class="tip" title="cefa : büyük sıkıntı, üzgü">cefa</a>nın, adını aşk vermişler.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Bu <a href="#" class="tip" title="cefa : büyük sıkıntı, üzgü">cefa</a>ya <a href="#" class="tip" title="kat : ön, huzur">kat</a>lanan, dosta <a href="#" class="tip" title="halvet : yalnızlık, tenha yer, tenhaya çekilme">halvet</a> vermişler.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Aşk durur türlü belâ, döndürür hâlden hâle.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Dost elinden piyâle, <a href="#" class="tip" title="key : çok, pek çok">key</a> <a href="#" class="tip" title="melâmet : kınamak, ayıplamak">melâmet</a> <a href="#" class="tip" title="ol : o">ol</a>muşlar.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Kime ki aşk ulaşa, her <a href="#" class="tip" title="dem : 1- vakit, zaman 2- nefes, kan">dem</a> kaynaya taşa.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>İyi dirlik hem <a href="#" class="tip" title="yavuz : kötü, dehşetli iyi">yavuz</a>, dört yanında durmuşlar.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Her <a href="#" class="tip" title="kim : ki">kim</a> aşk <a href="#" class="tip" title="er : erkek, yiğit, derviş, tarikat yolcusu">er</a>i ise, aşka müşteri ise,</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Aşk onun yâri ise, <a href="#" class="tip" title="can : ruh, yaşam">can</a>ına <a href="#" class="tip" title="od : ateş">od</a> vurmuşlar.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a><a href="#" class="tip" title="miskin : çok yoksul, tasvvufta varlıktan benlikten geçmiş tanrı varlığı ile var olmuş kimse">Miskin</a> Yunus'un <a href="#" class="tip" title="can : ruh, yaşam">can</a>ı, <a href="#" class="tip" title="baş : yara, yaranın işleyen gözü">baş</a>ında serencamı.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Aşka <a href="#" class="tip" title="münkir : inkâr eden, tanrı'yı inkâr eden">münkir</a> âdemi, bu meydandan <a href="#" class="tip" title="sür : kıyamette israfilin çalacağı boru. bütün ölüler bu borunun çalınmasıyla dirilecektir">sür</a>müşler.</p>
+<br/>
+
+        </div>
+
+        <br/>
+
+
+        <p>
+            <a href="#" onclick='showAllTips(); return false;' class="transparent">
+                <img src="../resources/img/showAll.png"/>
+                <span>Hepsini Göster</span>
+            </a>
+            <a href="#" onclick='hideAllTips(); return false;' class="transparent">
+                <img src="../resources/img/hideAll.png"/>
+                <span>Hepsini Gizle</span>
+            </a>
+        </p>
+        <p id="nextPageBlock" style="display: none;">
+            <a id="nextPageLink" class="transparent">
+                <img src="../resources/img/next.png"/>
+                <span>Sonraki</span>
+            </a>
+        </p>
+
+    </div>
+
+    <img src="../resources/img/bottomLeft.png" style="position:fixed; bottom:10px; left:10px;"/>
+    <img src="../resources/img/bottomRight.png" style="position:fixed; bottom:10px; right:10px;"/>
+
+</div>
+
+<script src="../resources/thirdparty/jquery/jquery-1.7.1.min.js"></script>
+<script src="../resources/thirdparty/tipsy/jquery.tipsy.js"></script>
+<script src="../resources/script/script.js"></script>
+
+<script type="text/javascript">
+    var url = '398.txt.html';
+    var title = '180. Türlü türlü cefanın';
+    var nextPageUrl = '399.txt.html';
+    setAsLastPage(url, title);
+    setNextPageLink(nextPageUrl);
+</script>
+
+
+</body>
+</html>

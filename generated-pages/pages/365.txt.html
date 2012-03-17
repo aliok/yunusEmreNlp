@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Yunus Emre Şiirleri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../resources/thirdparty/tipsy/tipsy.css" rel="stylesheet"/>
+    <link href="../resources/style/style.css" rel="stylesheet"/>
+
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <!--<link rel="apple-touch-icon" href="images/apple-touch-icon.png">-->
+    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">-->
+    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">-->
+</head>
+
+<body>
+<div id="container" class="container">
+    <img src="../resources/img/topLeft.png" style="position:fixed; top:10px; left:10px;"/>
+    <img src="../resources/img/topRight.png" style="position:fixed; top:10px; right:10px;"/>
+
+    <div style="padding-left: 10em; padding-top: 3em; color: black">
+        <a href="index.html" class="transparent">
+            <img src="../resources/img/showAll.png"/>
+            <span>Listeye dön</span>
+        </a>
+    </div>
+
+    <div style="text-align:center; padding-left: 10em; padding-right:6em;">
+
+        <div style="display: inline-block; text-align: left;">
+            <p class="title">
+                147. Sabahın sinleye vardım
+            </p>
+            <p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Sabahın <a href="#" class="tip" title="sin : mezar">sin</a>leye vardım, gördüm <a href="#" class="tip" title="cümle : hep, bütün, tüm">cümle</a> ölmüş yatar.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Her biri biçare <a href="#" class="tip" title="ol : o">ol</a>muş, ömrün yayı varmış yatar.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Vardım bunların <a href="#" class="tip" title="kat : ön, huzur">kat</a>ına, baktım ecel heybetine.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Nice yiğit muradına, <a href="#" class="tip" title="er : erkek, yiğit, derviş, tarikat yolcusu">er</a>ememiş ölmüş yatar</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Yemiş kurt, kuş bunu keler, nicelerin bağrın deler.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Şu ufacık naresteler, gül gibice solmuş yatar.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Tuzağa düşmüş tenleri, hakk'a ulaşmış <a href="#" class="tip" title="can : ruh, yaşam">can</a>ları.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Görmezmisin sen bunları? sıra bize gelmiş yatar.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Esilmiş inci dişleri, dökülmüş <a href="#" class="tip" title="sarı : altın">sarı</a> saçları.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Hepsinin bitmiş işleri, emr-ü nemde ermiş yatar.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Gitmiş gözünün karası, hiç işi yoktur durası.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Kefen bezinin paresi, sönüğe sarılmış yatar.</p>
+<br/>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Yunus gerçek <a href="#" class="tip" title="aş : yemek">aş</a>ık isen, mülke suret bezemegil.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Mülke suret bezeyenler, kara toprak <a href="#" class="tip" title="ol : o">ol</a>muş yatar</p>
+<br/>
+
+        </div>
+
+        <br/>
+
+
+        <p>
+            <a href="#" onclick='showAllTips(); return false;' class="transparent">
+                <img src="../resources/img/showAll.png"/>
+                <span>Hepsini Göster</span>
+            </a>
+            <a href="#" onclick='hideAllTips(); return false;' class="transparent">
+                <img src="../resources/img/hideAll.png"/>
+                <span>Hepsini Gizle</span>
+            </a>
+        </p>
+        <p id="nextPageBlock" style="display: none;">
+            <a id="nextPageLink" class="transparent">
+                <img src="../resources/img/next.png"/>
+                <span>Sonraki</span>
+            </a>
+        </p>
+
+    </div>
+
+    <img src="../resources/img/bottomLeft.png" style="position:fixed; bottom:10px; left:10px;"/>
+    <img src="../resources/img/bottomRight.png" style="position:fixed; bottom:10px; right:10px;"/>
+
+</div>
+
+<script src="../resources/thirdparty/jquery/jquery-1.7.1.min.js"></script>
+<script src="../resources/thirdparty/tipsy/jquery.tipsy.js"></script>
+<script src="../resources/script/script.js"></script>
+
+<script type="text/javascript">
+    var url = '365.txt.html';
+    var title = '147. Sabahın sinleye vardım';
+    var nextPageUrl = '366.txt.html';
+    setAsLastPage(url, title);
+    setNextPageLink(nextPageUrl);
+</script>
+
+
+</body>
+</html>
