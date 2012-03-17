@@ -1,0 +1,21 @@
+application: yunus-divan
+version: 0-0-1-snapshot
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /
+  script: redirector.application
+
+- url: /pages/(.*\.html)
+  static_files: pages/\1
+  upload: pages/(.*\.html)
+
+- url: /resources/(.*\.*)
+  static_files: resources/\1
+  upload: resources/(.*\.*)
