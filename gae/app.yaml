@@ -1,5 +1,5 @@
 application: yunus-divan
-version: 0-0-1-snapshot
+version: 0-0-1
 runtime: python27
 api_version: 1
 threadsafe: true
