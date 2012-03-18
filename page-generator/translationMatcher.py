@@ -21,10 +21,13 @@ class TranslationMatcher:
         suffixGenerator = languageSettings.ekUretici(alphabet);
 
         infinitiveSuffix = suffixManager.ek(TurkceEkAdlari.FIIL_MASTAR_MEK)
+
+        # an empty suffix (workaroundSuffix here) is required to be added when creating the infinitive
+        # form of the verb. See http://code.google.com/p/zemberek/issues/detail?id=117
         workaroundSuffix = Ek("WORKAROUND")
         workaroundSuffix.setUretimBilesenleri([])
         workaroundSuffix.setEkKuralCozumleyici(suffixGenerator)
-        infinitiveSuffix.ardisilEkler().add(workaroundSuffix);
+        infinitiveSuffix.ardisilEkler().add(workaroundSuffix)
 
         self.zemberek = zemberek
         self.dictionary = dict(dictionary.entries)
@@ -91,4 +94,6 @@ class TranslationMatcher:
 
 
     def getVerbInfinitive(self, root):
+        # an empty suffix (workaroundSuffix here) is required to be added when creating the infinitive
+        # form of the verb. See http://code.google.com/p/zemberek/issues/detail?id=117
         return self.zemberek.kelimeUret(root, [self.infinitiveSuffix, self.workaroundSuffix])
