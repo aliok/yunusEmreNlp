@@ -11,6 +11,9 @@ import dictionary
 #        self.index = index
 #        self.nextPageUrl = nextPageUrl
 
+def getHtmlForFile(dataFile):
+    return '<br/>'.join(dataFile)
+
 
 def getDataFileNameList(dataFolder, dataFileExtension):
     dataFiles = os.listdir(dataFolder)
@@ -32,9 +35,6 @@ def getTitle(dataFile):
     for line in dataFile:
         return line.strip()
 
-
-def getHtmlForFile(dataFile):
-    return '<br/>'.join(dataFile)
 
 
 def main():
