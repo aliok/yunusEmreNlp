@@ -33,10 +33,9 @@ def main():
 
     dataFileNameList = getDataFileNameList(dataFolder, dataFileExtension)
 
-#    for i in range(0, 1):
-    ##TODO: revert
     for i in range(0, len(dataFileNameList)):
         dataFileName = dataFileNameList[i]
+        print 'Processing input file ' + dataFileName
         index = i+1
         nextPageHref = ''
         if i < len(dataFileNameList)-1: #not the last element

@@ -1,38 +1,24 @@
-from net.zemberek.erisim import Zemberek
-from net.zemberek.tr.yapi import TurkiyeTurkcesi
-from net.zemberek.yapi import KelimeTipi
+from nlpToolAdapter import NlpToolAdapter
 
-zemberek = Zemberek(TurkiyeTurkcesi())
-
+nlpToolAdapter = NlpToolAdapter()
 
 def createCouplets(lines):
-    coupletSize = getCoupletSize(lines)
+    coupletSize = _getCoupletSize(lines)
 
-    # first check if the couplet size is same for all couplets
-    if len(lines) % (coupletSize + 1):
-        raise repr('Couplet size ' + str(coupletSize) + ' cannot be verified for title : ' + lines[0])
-    for i in range(coupletSize, len(lines), (coupletSize + 1)):
-        if lines[i] != '':
-            raise repr('Couplet size ' + str(coupletSize) + ' cannot be verified for title : ' + lines[0])
+    _verifyCoupletSize(lines, coupletSize)
 
-    # remove the empty lines from the lines list
-    lines = filter(lambda (s): s != '', lines)
+    lines = _removeEmptyLines(lines)
 
-    couplets = []
-    for i in range(0, len(lines) / coupletSize):
-        couplet = []
-        for j in range(0, coupletSize):
-            couplet.append(lines[coupletSize * i + j])
-        couplets.append(couplet)
+    couplets = _createCoupletsList(lines, coupletSize)
 
-    #Some hardcoded stuff, feeling sorry :(
+    #Some hardcoded stuff, I feel sorry :(
     if coupletSize == 4:
-        couplets = changeCoupletSizeToTwo(couplets)
+        couplets = _changeCoupletSizeToTwo(couplets)
 
     return couplets
 
 
-def getCoupletSize(lines):
+def _getCoupletSize(lines):
     """
     Returns the couplet (TR: beyit) length. Generally 2 or 4.
     See http://en.wikipedia.org/wiki/Couplet
@@ -46,39 +32,47 @@ def getCoupletSize(lines):
     return index
 
 
-def isProperNoun(word):
-    # TR: ozel isim mi diye bakar
-    # See http://en.wikipedia.org/wiki/Proper_noun
-
-    resolutions = zemberek.kelimeCozumle(word)
-    resolutions = sorted(resolutions, key=lambda (s): len(s.kok().icerik()), reverse=True)
-    for resolution in resolutions:
-        root = resolution.kok()
-        if KelimeTipi.OZEL == root.tip():
-            return True
-
-    return False
+def _verifyCoupletSize(lines, coupletSize):
+    # check if the couplet size is same for all couplets
+    if len(lines) % (coupletSize + 1):
+        raise repr('Couplet size ' + str(coupletSize) + ' cannot be verified for title : ' + lines[0])
+    for i in range(coupletSize, len(lines), (coupletSize + 1)):
+        if lines[i] != '':
+            raise repr('Couplet size ' + str(coupletSize) + ' cannot be verified for title : ' + lines[0])
 
 
-def mergeLines(firstLine, secondLine):
+def _removeEmptyLines(lines):
+    return filter(lambda (s): s != '', lines)
+
+def _createCoupletsList(lines, coupletSize):
+    couplets = []
+    for i in range(0, len(lines) / coupletSize):
+        couplet = []
+        for j in range(0, coupletSize):
+            couplet.append(lines[coupletSize * i + j])
+        couplets.append(couplet)
+
+    return couplets
+
+def _mergeLines(firstLine, secondLine):
     if not firstLine[-1].isalpha():
         firstLine = firstLine[:-1]
 
     indexOfFirstSpaceInSecondLine = secondLine.find(' ')
     if indexOfFirstSpaceInSecondLine != -1:
         firstWordOfSecondLine = secondLine[0:indexOfFirstSpaceInSecondLine]
-        if firstWordOfSecondLine[0].isupper() and not isProperNoun(firstWordOfSecondLine):
+        if firstWordOfSecondLine[0].isupper() and not nlpToolAdapter.isProperNoun(firstWordOfSecondLine):
             secondLine = secondLine[0].lower() + secondLine[1:]
 
     return firstLine + ', ' + secondLine
 
 
-def changeCoupletSizeToTwo(couplets):
-    #Some hardcoded stuff, feeling sorry :(
+def _changeCoupletSizeToTwo(couplets):
+    #Some hardcoded stuff, I feel sorry :(
 
     newCouplets = []
     for couplet in couplets:
-        newCouplet = [mergeLines(couplet[0], couplet[1]), mergeLines(couplet[2], couplet[3])]
+        newCouplet = [_mergeLines(couplet[0], couplet[1]), _mergeLines(couplet[2], couplet[3])]
         newCouplets.append(newCouplet)
 
     return newCouplets

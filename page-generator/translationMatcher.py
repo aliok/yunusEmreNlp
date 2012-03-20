@@ -1,37 +1,18 @@
-from net.zemberek.tr.yapi.ek import TurkceEkAdlari
-from net.zemberek.yapi.ek import Ek
 from dictionary import dictionary
-from net.zemberek.erisim import Zemberek
-from net.zemberek.tr.yapi import TurkiyeTurkcesi
-from net.zemberek.yapi import KelimeTipi
+from nlpToolAdapter import NlpToolAdapter
 
 
 class Match:
-    pass
+    def __init__(self, start, end, root, translation):
+        self.start = start
+        self.end = end
+        self.root = root
+        self.translation = translation
 
 class TranslationMatcher:
     def __init__(self):
-        languageSettings = TurkiyeTurkcesi()
-        zemberek = Zemberek(languageSettings)
-
-        grammar = zemberek.dilBilgisi()
-        suffixManager = grammar.ekler()
-        alphabet = grammar.alfabe()
-        suffixGenerator = languageSettings.ekUretici(alphabet);
-
-        infinitiveSuffix = suffixManager.ek(TurkceEkAdlari.FIIL_MASTAR_MEK)
-
-        # an empty suffix (workaroundSuffix here) is required to be added when creating the infinitive
-        # form of the verb. See http://code.google.com/p/zemberek/issues/detail?id=117
-        workaroundSuffix = Ek("WORKAROUND")
-        workaroundSuffix.setUretimBilesenleri([])
-        workaroundSuffix.setEkKuralCozumleyici(suffixGenerator)
-        infinitiveSuffix.ardisilEkler().add(workaroundSuffix)
-
-        self.zemberek = zemberek
-        self.dictionary = dict(dictionary.entries)
-        self.infinitiveSuffix = infinitiveSuffix
-        self.workaroundSuffix = workaroundSuffix
+        self._dictionary = dict(dictionary.entries)
+        self._nlpToolAdapter = NlpToolAdapter()
 
     def getMatchForWord(self, word):
         if not word:
@@ -39,60 +20,35 @@ class TranslationMatcher:
 
         word = word.lower()
 
-        ##TODO: extract to method, it used 3 times
-        #first look for a direct match
-        if self.dictionary.has_key(word):
-            translation = self.dictionary[word]
+        directMatch = self._searchDirectMatch(word)
 
-            match = Match()
-
-            match.start = 0
-            match.end = len(word)
-            match.root = word
-            match.translation = translation
-
-            return match
-
+        if directMatch:
+            return directMatch
         else:
-            resolutions = self.zemberek.kelimeCozumle(word)
-            resolutions = sorted(resolutions, key=lambda (s): len(s.kok().icerik()), reverse=True)
+            resolutions = self._nlpToolAdapter.resolveWord(word)
 
             for resolution in resolutions:
-                root = resolution.kok()
-                rootContent = root.icerik()
-                rootWordType = root.tip()
+                if resolution.rootIsVerb:
+                    rootInfinitive = self._nlpToolAdapter.getVerbInfinitive(resolution.root)
+                    if self._dictionary.has_key(rootInfinitive):
+                        translation = self._dictionary[rootInfinitive]
 
-                if rootWordType==KelimeTipi.FIIL:
-                    rootInfinitive = self.getVerbInfinitive(root)
-                    if self.dictionary.has_key(rootInfinitive):
-                        translation = self.dictionary[rootInfinitive]
-
-                        match = Match()
-
-                        match.start = 0
-                        match.end = len(rootContent)
-                        match.root = rootInfinitive
-                        match.translation = translation
-
-                        return match
+                        return Match(0, len(resolution.rootContent), rootInfinitive, translation)
 
                 else:
-                    if self.dictionary.has_key(rootContent):
-                        translation = self.dictionary[rootContent]
-
-                        match = Match()
-
-                        match.start = 0
-                        match.end = len(rootContent)
-                        match.root = rootContent
-                        match.translation = translation
-
-                        return match
+                    if self._dictionary.has_key(resolution.rootContent):
+                        return self._searchDirectMatch(resolution.rootContent)
 
         return None
 
 
-    def getVerbInfinitive(self, root):
-        # an empty suffix (workaroundSuffix here) is required to be added when creating the infinitive
-        # form of the verb. See http://code.google.com/p/zemberek/issues/detail?id=117
-        return self.zemberek.kelimeUret(root, [self.infinitiveSuffix, self.workaroundSuffix])
+    def _searchDirectMatch(self, word):
+        if not word:
+            return None
+
+        if self._dictionary.has_key(word):
+            translation = self._dictionary[word]
+
+            return Match(0, len(word), word, translation)
+        else:
+            return None
