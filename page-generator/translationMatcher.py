@@ -1,6 +1,5 @@
 from net.zemberek.tr.yapi.ek import TurkceEkAdlari
 from net.zemberek.yapi.ek import Ek
-from net.zemberek.islemler import KelimeUretici
 from dictionary import dictionary
 from net.zemberek.erisim import Zemberek
 from net.zemberek.tr.yapi import TurkiyeTurkcesi
@@ -13,7 +12,7 @@ class Match:
 class TranslationMatcher:
     def __init__(self):
         languageSettings = TurkiyeTurkcesi()
-        zemberek = Zemberek(languageSettings);
+        zemberek = Zemberek(languageSettings)
 
         grammar = zemberek.dilBilgisi()
         suffixManager = grammar.ekler()
@@ -55,11 +54,11 @@ class TranslationMatcher:
             return match
 
         else:
-            parts = self.zemberek.kelimeCozumle(word)
-            parts = sorted(parts, key=lambda (s): len(s.kok().icerik()), reverse=True)
+            resolutions = self.zemberek.kelimeCozumle(word)
+            resolutions = sorted(resolutions, key=lambda (s): len(s.kok().icerik()), reverse=True)
 
-            for part in parts:
-                root = part.kok()
+            for resolution in resolutions:
+                root = resolution.kok()
                 rootContent = root.icerik()
                 rootWordType = root.tip()
 
