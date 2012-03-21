@@ -87,3 +87,28 @@ a.transparent span{
     color: #000000;
     line-height: 2em;
 }
+
+@media only screen and (max-width: 999px) {
+    /* rules that only apply for canvases narrower than 1000px */
+    body{
+        font-size: 8px;
+    }
+
+    #bottomLeftImage{
+        position:relative;
+        bottom:1px;
+        left:1px;
+        float: left;
+    }
+
+    #bottomRightImage{
+        position:relative;
+        bottom:1px;
+        right:1px;
+        float: right;
+    }
+
+    a.tip {
+        border-bottom: 0.1em dotted;
+    }
+}
