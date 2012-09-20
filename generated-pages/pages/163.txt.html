@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<!--
+  ~ Copyright [2012] [Ali Ok - aliok@apache.org]
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Yunus Emre Şiirleri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../resources/thirdparty/tipsy/tipsy.css" rel="stylesheet"/>
+    <link href="../resources/style/style.css" rel="stylesheet"/>
+
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <!--<link rel="apple-touch-icon" href="images/apple-touch-icon.png">-->
+    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">-->
+    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">-->
+</head>
+
+<body>
+<div id="container" class="container">
+    <img src="../resources/img/topLeft.png" style="position:fixed; top:10px; left:10px;"/>
+    <img src="../resources/img/topRight.png" style="position:fixed; top:10px; right:10px;"/>
+
+    <div style="padding-left: 10em; padding-top: 3em; color: black">
+        <a href="index.html" class="transparent">
+            <img src="../resources/img/showAll.png"/>
+            <span>Listeye dön</span>
+        </a>
+    </div>
+
+    <div style="text-align:center; padding-left: 10em; padding-right:6em;">
+
+        <div style="display: inline-block; text-align: left;">
+            <p class="title">
+                163. ﻿Dilsizler haberini kulaksız dinleyesi
+            </p>
+            <p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>﻿Dilsizler haberini kulaksız dinleyesi,</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Dilsiz kulaksız sözü, <a href="#" class="tip" title="can : ruh, yaşam">can</a> gerek anlayaşı.</p>
+</br><p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Dinlemeden <a href="#" class="tip" title="an : o">an</a>ladık, <a href="#" class="tip" title="an : o">an</a>lamadan eyledik,</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Gerçek <a href="#" class="tip" title="er : erkek, yiğit, derviş, tarikat yolcusu">er</a>in bu <a href="#" class="tip" title="yol : usul, düzen">yol</a>da yokluktur sermayesi.</p>
+</br><p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Biz sevdik aşık olduk, sevildik maşuk olduk,</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Her <a href="#" class="tip" title="dem : 1- vakit, zaman 2- nefes, kan">dem</a> yeni dirlikte, bizden <a href="#" class="tip" title="kim : ki">kim</a> usanası.</p>
+</br><p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Yetmiş iki dilceydi araya sınır düştü,</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a><a href="#" class="tip" title="ol : o">Ol</a> bakışlı biz baktık, <a href="#" class="tip" title="yermek : kötülemek">yer</a>medik âm-u <a href="#" class="tip" title="has : iyi, güzel, en güzel">hâs</a>ı.</p>
+</br><p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a><a href="#" class="tip" title="miskin : çok yoksul, tasvvufta varlıktan benlikten geçmiş tanrı varlığı ile var olmuş kimse">Miskin</a> Yunus <a href="#" class="tip" title="ol : o">ol</a> veli, yerde gökte dopdolu,</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Her taş altında gizli, bin <a href="#" class="tip" title="imran : musa peygamberin babası, kur'an'ı kerim'in üçüncü suresi">imran</a> oğlu Musi.</p>
+        </div>
+
+        <br/>
+
+
+        <p>
+            <a href="#" onclick='showAllTips(); return false;' class="transparent">
+                <img src="../resources/img/showAll.png"/>
+                <span>Hepsini Göster</span>
+            </a>
+            <a href="#" onclick='hideAllTips(); return false;' class="transparent">
+                <img src="../resources/img/hideAll.png"/>
+                <span>Hepsini Gizle</span>
+            </a>
+        </p>
+        <p id="nextPageBlock" style="display: none;">
+            <a id="nextPageLink" class="transparent">
+                <img src="../resources/img/next.png"/>
+                <span>Sonraki</span>
+            </a>
+        </p>
+
+    </div>
+
+    <img id="bottomLeftImage" src="../resources/img/bottomLeft.png" />
+    <img id="bottomRightImage" src="../resources/img/bottomRight.png" />
+
+</div>
+
+<script src="../resources/thirdparty/jquery/jquery-1.7.1.min.js"></script>
+<script src="../resources/thirdparty/tipsy/jquery.tipsy.js"></script>
+<script src="../resources/script/script.js"></script>
+
+<script type="text/javascript">
+    var url = '163.txt.html';
+    var title = '163. ﻿Dilsizler haberini kulaksız dinleyesi';
+    var nextPageUrl = '164.txt.html';
+    setAsLastPage(url, title);
+    setNextPageLink(nextPageUrl);
+</script>
+
+
+</body>
+</html>

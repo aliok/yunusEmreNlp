@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<!--
+  ~ Copyright [2012] [Ali Ok - aliok@apache.org]
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Yunus Emre Şiirleri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../resources/thirdparty/tipsy/tipsy.css" rel="stylesheet"/>
+    <link href="../resources/style/style.css" rel="stylesheet"/>
+
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <!--<link rel="apple-touch-icon" href="images/apple-touch-icon.png">-->
+    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">-->
+    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">-->
+</head>
+
+<body>
+<div id="container" class="container">
+    <img src="../resources/img/topLeft.png" style="position:fixed; top:10px; left:10px;"/>
+    <img src="../resources/img/topRight.png" style="position:fixed; top:10px; right:10px;"/>
+
+    <div style="padding-left: 10em; padding-top: 3em; color: black">
+        <a href="index.html" class="transparent">
+            <img src="../resources/img/showAll.png"/>
+            <span>Listeye dön</span>
+        </a>
+    </div>
+
+    <div style="text-align:center; padding-left: 10em; padding-right:6em;">
+
+        <div style="display: inline-block; text-align: left;">
+            <p class="title">
+                110. Bize burda türlü ta'n eyleyenler
+            </p>
+            <p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Bize burda türlü ta'n eyleyenler, ya ben Hak <a href="#" class="tip" title="yol : usul, düzen">yol</a>una dönmeyeyim mi?</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Doğru <a href="#" class="tip" title="yol : usul, düzen">yol</a>u koyup eğri gidenler, ya ben Hak <a href="#" class="tip" title="yol : usul, düzen">yol</a>una dönmeyeyim mi?</p>
+</br><p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Bizden evvel gelen Üçler, <a href="#" class="tip" title="yediler : hz. muhammed'in gizini bilen tanrı elçisi bir kutupla altı erenden olşan imamlar topluluğu. yediler üçler'den sonra gelir. dünyayı tanrı adına bunlar yönetirler">Yediler</a>, münafıkın sözü şektir dediler.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a><a href="#" class="tip" title="tevhit : birlemek, tanrı'yı bilmek">Tevhit</a>lere dönmek haktır dediler, ya ben Hak <a href="#" class="tip" title="yol : usul, düzen">yol</a>una dönmeyeyim mi?</p>
+</br><p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Varır bir <a href="#" class="tip" title="münkir : inkâr eden, tanrı'yı inkâr eden">münkir</a>e müşkül sorarsın, kendi kendin cehenneme salarsın.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Ya sen dünya için niçin dönersin, ya ben Hak <a href="#" class="tip" title="yol : usul, düzen">yol</a>una dönmeyeyim mi?</p>
+</br><p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>Yunus Emre <a href="#" class="tip" title="kılmak : etmek, eylemek, yapmak">kıl</a>ar ah ile zârı, görün nice döner yüce <a href="#" class="tip" title="hünkâr : padşah, hükümdar, sultan">Hünkâr</a>'ı.</p>
+<p class="line"><a class="lineTipToggler" href="#"><img src="../resources/img/lineTip.png"/></a>O Allah yaratır <a href="#" class="tip" title="cümle : hep, bütün, tüm">cümle</a>yi varı, ya ben Hak <a href="#" class="tip" title="yol : usul, düzen">yol</a>una dönmeyeyim mi?</p>
+        </div>
+
+        <br/>
+
+
+        <p>
+            <a href="#" onclick='showAllTips(); return false;' class="transparent">
+                <img src="../resources/img/showAll.png"/>
+                <span>Hepsini Göster</span>
+            </a>
+            <a href="#" onclick='hideAllTips(); return false;' class="transparent">
+                <img src="../resources/img/hideAll.png"/>
+                <span>Hepsini Gizle</span>
+            </a>
+        </p>
+        <p id="nextPageBlock" style="display: none;">
+            <a id="nextPageLink" class="transparent">
+                <img src="../resources/img/next.png"/>
+                <span>Sonraki</span>
+            </a>
+        </p>
+
+    </div>
+
+    <img id="bottomLeftImage" src="../resources/img/bottomLeft.png" />
+    <img id="bottomRightImage" src="../resources/img/bottomRight.png" />
+
+</div>
+
+<script src="../resources/thirdparty/jquery/jquery-1.7.1.min.js"></script>
+<script src="../resources/thirdparty/tipsy/jquery.tipsy.js"></script>
+<script src="../resources/script/script.js"></script>
+
+<script type="text/javascript">
+    var url = '110.txt.html';
+    var title = '110. Bize burda türlü ta'n eyleyenler';
+    var nextPageUrl = '111.txt.html';
+    setAsLastPage(url, title);
+    setNextPageLink(nextPageUrl);
+</script>
+
+
+</body>
+</html>
