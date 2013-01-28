@@ -1,7 +1,8 @@
 {
+  "manifest_version": 2,
   "name": "Yunus Emre Divanı",
-  "description": "Yunus Emre Divanı uygulaması. Yunus Emre'nin 450 şiirini interaktif olarak okumanız için.",
-  "version": "1.0.0",
+  "description": "Yunus Emre Divanı uygulaması. Yunus Emre'nin 417 şiirini interaktif olarak okumanız için.",
+  "version": "2.0.2",
   "app": {
     "launch": {
       "local_path": "pages/index.html"

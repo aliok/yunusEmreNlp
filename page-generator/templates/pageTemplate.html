@@ -55,11 +55,11 @@
 
 
         <p>
-            <a href="#" onclick='showAllTips(); return false;' class="transparent">
+            <a href="#" id="showAllButton" class="transparent">
                 <img src="../resources/img/showAll.png"/>
                 <span>Hepsini Göster</span>
             </a>
-            <a href="#" onclick='hideAllTips(); return false;' class="transparent">
+            <a href="#" id="hideAllButton" class="transparent">
                 <img src="../resources/img/hideAll.png"/>
                 <span>Hepsini Gizle</span>
             </a>
@@ -78,18 +78,14 @@
 
 </div>
 
+<input type="hidden" id="urlInput" value="#{urlVar}"/>
+<input type="hidden" id="titleInput" value="#{titleVar}"/>
+<input type="hidden" id="nextPageInput" value="#{nextPageUrl}"/>
+
 <script src="../resources/thirdparty/jquery/jquery-1.7.1.min.js"></script>
 <script src="../resources/thirdparty/tipsy/jquery.tipsy.js"></script>
 <script src="../resources/script/script.js"></script>
-
-<script type="text/javascript">
-    var url = '#{urlVar}';
-    var title = '#{titleVar}';
-    var nextPageUrl = '#{nextPageUrl}';
-    setAsLastPage(url, title);
-    setNextPageLink(nextPageUrl);
-</script>
-
+<script src="../resources/script/pageScript.js"></script>
 
 </body>
 </html>
